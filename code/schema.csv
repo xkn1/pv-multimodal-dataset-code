@@ -1,0 +1,48 @@
+table,field,type,unit_or_values,description,release_status
+power_qc,timestamp,datetime Asia/Shanghai,,Power record timestamp,public
+power_qc,power_raw_kw,float,kW,Original exported active power,pending-rights
+power_qc,power_operational_qc_kw,float nullable,kW,Operational-QC power used by primary dataset,public-derived
+power_qc,irradiance_value,float nullable,W/m2,Matched horizontal global irradiance,pending-rights
+power_qc,irradiance_delta_seconds,float nullable,s,Time offset to irradiance observation,public-derived
+power_qc,solar_elevation_deg,float,degree,Solar elevation calculated from private site coordinates,public-derived
+power_qc,qc_hard_flags,string list,,Hard invalidity reasons,public-derived
+power_qc,qc_soft_flags,string list,,Suspicious but not automatically removed flags,public-derived
+power_qc,operational_status,category,,Operational eligibility category,public-derived
+image_power_pairs,sample_id,string,,Stable non-identifying sample key,public
+image_power_pairs,image_member,string,,Archive member path; sanitize device IP and source folder names before release,sanitize
+image_power_pairs,image_timestamp,datetime Asia/Shanghai,,Clock-corrected image timestamp,public
+image_power_pairs,power_timestamp,datetime Asia/Shanghai,,Matched power timestamp,public
+image_power_pairs,image_power_delta_seconds,float,s,Image time minus matched power time,public-derived
+image_power_pairs,image_width,integer,pixel,Decoded source image width,public
+image_power_pairs,image_height,integer,pixel,Decoded source image height,public
+image_power_pairs,sha256,hex string,,Image content checksum,public-derived
+image_power_pairs,temperature_c,float nullable,degree C,Matched ambient temperature,pending-rights
+image_power_pairs,relative_humidity_pct,float nullable,percent,Matched relative humidity,pending-rights
+image_power_pairs,precipitation_mm,float nullable,mm,Matched precipitation,pending-rights
+image_power_pairs,wind_direction_deg,float nullable,degree,Matched wind direction,pending-rights
+image_power_pairs,solar_elevation_deg,float,degree,Solar elevation,public-derived
+image_power_pairs,sample_eligible_primary,boolean,,Meets audited primary inclusion rules,public-derived
+image_power_pairs,split_chronological,category,train|validation|test,Whole-day chronological split,public-derived
+image_power_pairs,split_seasonal_day_hash,category,train|validation|test,Seasonally mixed whole-day sensitivity split,public-derived
+image_features,brightness_mean,float,0-1,Mean valid-sky-view brightness,public-derived
+image_features,saturation_mean,float,0-1,Mean saturation,public-derived
+image_features,dark_fraction,float,0-1,Fraction of dark pixels in processed view,public-derived
+image_features,bright_fraction,float,0-1,Fraction of bright pixels in processed view,public-derived
+image_features,red_blue_log_ratio,float,,Log red-to-blue ratio summary,public-derived
+image_features,ring*_channel_mean,float,0-1,Three radial-ring RGB means,public-derived
+image_features,sector*_channel_mean,float,0-1,Eight angular-sector RGB means,public-derived
+image_features,effective_grayscale,boolean,,RGB channels effectively identical; quality-review flag,public-derived
+ramp_labels,start_time,datetime Asia/Shanghai,,Ramp window start,public-derived
+ramp_labels,end_time,datetime Asia/Shanghai,,Ramp window end,public-derived
+ramp_labels,delta_kw,float,kW,End minus start power,public-derived
+ramp_labels,delta_pu_ac,float,fraction of 15 kW AC rating,Capacity-normalized power change,public-derived
+ramp_labels,direction,category,ramp_up|ramp_down|non_ramp,Ramp direction,public-derived
+ramp_labels,ramp_eligible,boolean,,Window meets continuity daylight and QC rules,public-derived
+ramp_labels,ramp_event,boolean,,Meets primary threshold,public-derived
+ramp_events,event_id,string,,Stable event identifier,public-derived
+ramp_events,duration_minutes,float,minute,Merged event duration,public-derived
+ramp_events,max_abs_change_kw,float,kW,Maximum absolute candidate change within event,public-derived
+ramp_events,max_abs_rate_kw_per_min,float,kW/min,Maximum absolute rate within event,public-derived
+cloud_masks,mask_value,uint8,0|1|2|255,Clear opaque thin-cloud and ignore/non-sky labels,after-human-annotation
+cloud_masks,annotator_id,pseudonymous string,,Annotator key without personal identity,after-human-annotation
+cloud_masks,annotation_status,category,draft|reviewed|adjudicated,Annotation workflow state,after-human-annotation
