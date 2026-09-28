@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0-public-template",
+  "site": {
+    "site_id": "changsha_single_site",
+    "administrative_location": "Tiaoma Town, Yuhua District, Changsha, Hunan, China",
+    "timezone": "Asia/Shanghai",
+    "utc_offset_hours": 8,
+    "latitude": null,
+    "longitude": null,
+    "coordinate_note": "Keep exact coordinates in a private config; never commit them.",
+    "installed_dc_kwp": 15.0,
+    "installed_ac_kw": 15.0,
+    "module_tilt_degrees": 20.0,
+    "module_azimuth_degrees": 180.0,
+    "azimuth_convention": "north=0,east=90,south=180"
+  },
+  "power": {
+    "unit": "kW",
+    "expected_interval_minutes": 5
+  },
+  "pairing": {
+    "image_power_tolerance_seconds": 30
+  },
+  "day3_pairing": {
+    "minimum_solar_elevation_degrees": 5.0,
+    "primary_power_subset": "operational",
+    "chronological_train_end": "2025-06-30 23:59:59",
+    "chronological_validation_end": "2025-10-31 23:59:59",
+    "seasonal_day_hash_seed": 20260822
+  },
+  "day4": {
+    "input_size": 224,
+    "preprocessing_mode": "rectilinear_square",
+    "rectilinear_fisheye_model": "stereographic",
+    "rectilinear_center_x_px": 2000.0,
+    "rectilinear_center_y_px": 1484.0,
+    "rectilinear_radius_90deg_px": 1409.0,
+    "rectilinear_corner_zenith_degrees": 73.0,
+    "rectilinear_camera_yaw_degrees": 0.0,
+    "orientation_note": "Yaw remains provisional until solar-track verification."
+  },
+  "ramp": {
+    "primary_power_column": "power_operational_qc_kw",
+    "primary_definition": {
+      "horizon_minutes": 15,
+      "scheme": "capacity_fraction",
+      "threshold_pu": 0.1
+    },
+    "horizons_minutes": [
+      5,
+      15,
+      30
+    ],
+    "capacity_fraction_thresholds": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "statistical_quantiles": [
+      0.95,
+      0.99,
+      0.995
+    ],
+    "statistical_training_end": "2025-06-30 23:59:59",
+    "minimum_solar_elevation_degrees": 5.0,
+    "merge_gap_minutes": 5
+  },
+  "paths": {
+    "raw_power_directory": "CHANGE_ME/raw_power",
+    "image_directory": "CHANGE_ME/monthly_image_archives",
+    "irradiance_workbook": "CHANGE_ME/irradiance.xlsx",
+    "weather_workbook": "CHANGE_ME/weather.xlsx"
+  }
+}
