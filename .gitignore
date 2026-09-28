@@ -1,0 +1,24 @@
+# Local configuration and credentials
+code/config/site_config.json
+.env
+.env.*
+*.pem
+*.key
+
+# Data and generated output
+data/
+outputs/
+*.zip
+*.tar
+*.tar.gz
+*.pt
+*.pth
+*.npy
+*.npz
+
+# Python environment and cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/

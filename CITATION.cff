@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the dataset record and associated paper."
+title: "A 26-month photovoltaic multimodal dataset with sky images, irradiance, reanalysis and forecasts"
+type: dataset
+version: "1.0.0"
+url: "https://huggingface.co/datasets/keningxie-pv/pv-multimodal-dataset"
+authors:
+  - family-names: "Yuan"
+    given-names: "Liang"
+    affiliation: "School of Electrical Engineering, Central South University"
+    email: "254612133@csu.edu.cn"
+  - family-names: "Xie"
+    given-names: "Kening"
+    affiliation: "School of Electrical Engineering, Central South University"
+  - family-names: "Tan"
+    given-names: "Caixing"
+    affiliation: "School of Electrical Engineering, Central South University"
+  - family-names: "Liu"
+    given-names: "Zhangjie"
+    affiliation: "School of Electrical Engineering, Central South University"
+license: "CC-BY-4.0"
