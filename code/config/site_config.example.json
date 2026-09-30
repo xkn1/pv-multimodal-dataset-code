@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0-public-template",
+  "schema_version": "4.2-day4-rectilinear-73deg-clean-public",
   "site": {
     "site_id": "changsha_single_site",
     "administrative_location": "Tiaoma Town, Yuhua District, Changsha, Hunan, China",
@@ -8,10 +8,10 @@
     "latitude": null,
     "longitude": null,
     "coordinate_note": "Keep exact coordinates in a private config; never commit them.",
-    "installed_dc_kwp": 15.0,
-    "installed_ac_kw": 15.0,
-    "module_tilt_degrees": 20.0,
-    "module_azimuth_degrees": 180.0,
+    "installed_dc_kwp": 15,
+    "installed_ac_kw": 15,
+    "module_tilt_degrees": 20,
+    "module_azimuth_degrees": 180,
     "azimuth_convention": "north=0,east=90,south=180"
   },
   "power": {
@@ -21,23 +21,33 @@
   "pairing": {
     "image_power_tolerance_seconds": 30
   },
+  "camera": {
+    "image_width": 4000,
+    "image_height": 3000,
+    "optical_center_x_px": 2000,
+    "optical_center_y_px": 1484,
+    "sky_radius_px": 1409,
+    "north_rotation_degrees_clockwise": 110.885,
+    "projection_model": "stereographic_candidate_from_sun_track",
+    "geometry_status": "sun_track_calibrated_candidate_cross_year_checked"
+  },
   "day3_pairing": {
-    "minimum_solar_elevation_degrees": 5.0,
+    "minimum_solar_elevation_degrees": 5,
     "primary_power_subset": "operational",
     "chronological_train_end": "2025-06-30 23:59:59",
     "chronological_validation_end": "2025-10-31 23:59:59",
     "seasonal_day_hash_seed": 20260822
   },
   "day4": {
-    "input_size": 224,
+    "input_size": 128,
     "preprocessing_mode": "rectilinear_square",
     "rectilinear_fisheye_model": "stereographic",
-    "rectilinear_center_x_px": 2000.0,
-    "rectilinear_center_y_px": 1484.0,
-    "rectilinear_radius_90deg_px": 1409.0,
-    "rectilinear_corner_zenith_degrees": 73.0,
-    "rectilinear_camera_yaw_degrees": 0.0,
-    "orientation_note": "Yaw remains provisional until solar-track verification."
+    "rectilinear_center_x_px": 2014,
+    "rectilinear_center_y_px": 1486,
+    "rectilinear_radius_90deg_px": 1456,
+    "rectilinear_corner_zenith_degrees": 73,
+    "rectilinear_camera_yaw_degrees": 200.885,
+    "rectilinear_calibration_note": "Sun-track candidate based on 1003 visually audited/robust sun positions and cross-year checks (2024/2025). Approved for full-batch Day 4 processing; not a substitute for checkerboard calibration."
   },
   "ramp": {
     "primary_power_column": "power_operational_qc_kw",
@@ -62,7 +72,7 @@
       0.995
     ],
     "statistical_training_end": "2025-06-30 23:59:59",
-    "minimum_solar_elevation_degrees": 5.0,
+    "minimum_solar_elevation_degrees": 5,
     "merge_gap_minutes": 5
   },
   "paths": {
