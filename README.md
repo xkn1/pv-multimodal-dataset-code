@@ -19,7 +19,7 @@ python -m pytest -q tests/test_release_smoke.py
 python run_pipeline.py --config config/site_config.example.json --help
 ```
 
-Install `requirements-models.txt` to run the PyTorch training scripts. The full pipeline requires dataset files and a local configuration with valid paths. The example configuration does not include private site coordinates and is not a record of final camera-calibration parameters. The released code therefore should not be taken as evidence that every image used in the reported experiments can be reconstructed from the public configuration alone.
+Install `requirements-models.txt` to run the PyTorch training scripts. The full pipeline requires dataset files and a local configuration with valid paths. The public example records the 73° rectilinear preprocessing parameters approved for the full-batch Day 4 run: center (2014, 1486) px, 90° radius 1456 px, camera yaw 200.885°, and output size 128 px. These are cross-year-checked sun-track calibration candidates, not checkerboard calibration. Exact residential coordinates and machine-specific paths are intentionally omitted, so the public example alone does not reproduce every site-dependent calculation.
 
 ## Data, rights, and citation
 
