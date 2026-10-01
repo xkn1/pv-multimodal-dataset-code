@@ -21,7 +21,8 @@ POWER_THRESHOLD_KW = 1.5
 
 def raw_crop(raw: bytes, size: int = 512) -> Image.Image:
     image = Image.open(io.BytesIO(raw)).convert("RGB")
-    cx, cy, r90 = 2000.0, 1484.0, 1409.0
+    # Match the public 73-degree clean-v6 sun-track configuration.
+    cx, cy, r90 = 2014.0, 1486.0, 1456.0
     radius = r90 * math.tan(math.radians(73.0 / 2.0))
     box = tuple(int(round(v)) for v in (cx-radius, cy-radius, cx+radius, cy+radius))
     crop = image.crop(box).resize((size, size), Image.Resampling.LANCZOS)

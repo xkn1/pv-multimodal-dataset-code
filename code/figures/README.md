@@ -15,7 +15,11 @@ output can be regenerated from the public dataset alone.
 
 The ramp script was revised to separate the chart ticks from thumbnail captions.
 It places the timezone below the thumbnails and removes lines that crossed
-caption text. Its event-selection and data values were not changed. The
+caption text. Its event-selection and plotted numerical values were not
+changed. The thumbnail crop now uses the public 73-degree clean-v6 center
+(2014, 1486) and 90-degree radius 1456 px; the historical script had older
+crop values. Thus rerendered thumbnails can differ slightly from the original
+figure. The
 wording of its module description was also corrected from causal to directional
 evidence; the paper does not infer causality from these plots.
 
