@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Please cite this software release and the associated dataset record."
 title: "PV multimodal dataset: analysis code"
 type: software
-version: "1.0.0"
+version: "1.0.1"
 url: "https://github.com/xkn1/pv-multimodal-dataset-code"
 authors:
   - family-names: "Yuan"
