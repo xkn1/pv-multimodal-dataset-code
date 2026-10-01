@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "Please cite the dataset record and associated paper."
-title: "A 26-month photovoltaic multimodal dataset with sky images, irradiance, reanalysis and forecasts"
-type: dataset
+message: "Please cite this software release and the associated dataset record."
+title: "PV multimodal dataset: analysis code"
+type: software
 version: "1.0.0"
-url: "https://huggingface.co/datasets/keningxie-pv/pv-multimodal-dataset"
+url: "https://github.com/xkn1/pv-multimodal-dataset-code"
 authors:
   - family-names: "Yuan"
     given-names: "Liang"
@@ -18,4 +18,4 @@ authors:
   - family-names: "Liu"
     given-names: "Zhangjie"
     affiliation: "School of Electrical Engineering, Central South University"
-license: "CC-BY-4.0"
+license: "MIT"
